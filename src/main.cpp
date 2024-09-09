@@ -12,32 +12,25 @@
 // Vertices coordinates
 GLfloat vertices[] =
 {
-	-0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f, // Lower left corner
-	0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f, // Lower right corner
-	0.0f, 0.5f * float(sqrt(3)) * 2 / 3, 0.0f, // Upper corner
-	-0.5f / 2, 0.5f * float(sqrt(3)) / 6, 0.0f, // Inner left
-	0.5f / 2, 0.5f * float(sqrt(3)) / 6, 0.0f, // Inner right
-	0.0f, -0.5f * float(sqrt(3)) / 3, 0.0f // Inner down
+    -.5f,-.5f,0.0f,
+    -.5f,.5f,0.0f,
+    .5f,.5f,0.0f,
+    .5f,-.5f,0.0f,
 };
 
 // Indices for vertices order
 GLuint indices[] =
 {
-	0, 3, 5, // Lower left triangle
-	3, 2, 4, // Lower right triangle
-	5, 4, 1 // Upper triangle
+    0,1,2,
+    0,3,2
 };
-
-void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
-    glViewport(0, 0, width, height);
-}
 
 int main() {
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     
-    GLFWwindow* window = glfwCreateWindow(800, 600, "Minecraft", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(800, 800, "Minecraft", NULL, NULL);
 
     // Failed to create GLFW window
     if (window == NULL) {
@@ -46,15 +39,10 @@ int main() {
         return -1;
     }
 
-
-
     glfwMakeContextCurrent(window);
 
     gladLoadGL();
-    glViewport(0, 0, 800, 600);
-
-    // Fix resizing
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glViewport(0, 0, 800, 800);
 
     Shader shaderProgram("shaders/default.vert", "shaders/default.frag");
 
