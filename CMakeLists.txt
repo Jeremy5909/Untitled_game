@@ -6,7 +6,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 find_package(glfw3 REQUIRED)
 find_package(OpenGL REQUIRED)
 
-include_directories(include shaders)
+include_directories(include)
 
 add_executable(
     ${PROJECT_NAME}
