@@ -22,7 +22,7 @@ Shader::Shader(const char* vertexFile, const char* fragmentFile) {
     std::string fragmentCode = get_file_contents(fragmentFile);
     
     const char* vertexSource = vertexCode.c_str();
-    const char* fragmentSoruce = fragmentCode.c_str();
+    const char* fragmentSource = fragmentCode.c_str();
 
     // Create Vertex Shader Object
     GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
@@ -35,7 +35,7 @@ Shader::Shader(const char* vertexFile, const char* fragmentFile) {
     // Create Fragment Shader Object 
     GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
     // Attach Fragment Shader source to Fragment Shader Object
-    glShaderSource(fragmentShader, 1, &fragmentSoruce, NULL);
+    glShaderSource(fragmentShader, 1, &fragmentSource, NULL);
     glCompileShader(fragmentShader);
     compileErrors(vertexShader, "FRAGMENT");
 

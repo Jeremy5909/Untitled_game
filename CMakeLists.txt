@@ -15,9 +15,13 @@ add_executable(
     src/VAO.cpp
     src/VBO.cpp
     src/EBO.cpp
+    src/Texture.cpp
+
     src/glad.c
+    src/stb.cpp
 )
 
 target_link_libraries(${PROJECT_NAME} glfw OpenGL::GL)
 
-file(COPY ${CMAKE_SOURCE_DIR}/shaders DESTINATION ${CMAKE_BINARY_DIR})
+file(COPY ${CMAKE_SOURCE_DIR}/Shaders DESTINATION ${CMAKE_BINARY_DIR})
+file(COPY ${CMAKE_SOURCE_DIR}/Textures DESTINATION ${CMAKE_BINARY_DIR})
