@@ -47,7 +47,7 @@ int main() {
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     
-    GLFWwindow* window = glfwCreateWindow(width, height, "Minecraft", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(width, height, "untitled_game", NULL, NULL);
 
     // Failed to create GLFW window
     if (window == NULL) {

@@ -1,5 +1,3 @@
-# Why
-I wanna learn opengl and there aren't enough minecraft "clones"
 # Building
 ## MacOS / Linux
 1. Make and go inside the build folder
@@ -16,4 +14,4 @@ I wanna learn opengl and there aren't enough minecraft "clones"
 
 4. Launch the application
 
-`./minecraft`
+`./untitled_game`
