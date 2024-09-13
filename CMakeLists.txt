@@ -16,6 +16,7 @@ add_executable(
     src/VBO.cpp
     src/EBO.cpp
     src/Texture.cpp
+    src/Camera.cpp
 
     src/glad.c
     src/stb.cpp
