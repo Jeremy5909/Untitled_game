@@ -42,6 +42,19 @@ GLuint indices[] =
     3, 0, 4,
 };
 
+void fix_mac_render(GLFWwindow* window) {
+#ifdef __APPLE__
+    static bool macMoved = false;
+
+    if(!macMoved) {
+        int x, y;
+        glfwGetWindowPos(window, &x, &y);
+        glfwSetWindowPos(window, ++x, y);
+        macMoved = true;
+    }
+#endif
+}
+
 int main() {
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -104,6 +117,7 @@ int main() {
         VAO1.Bind();
         glDrawElements(GL_TRIANGLES, sizeof(indices)/sizeof(int), GL_UNSIGNED_INT, 0);
         glfwSwapBuffers(window);
+        fix_mac_render(window);
 
         // Check for events
         glfwPollEvents();
