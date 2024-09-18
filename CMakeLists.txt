@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.30)
 project(untitled_game)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 find_package(glfw3 REQUIRED)
 find_package(OpenGL REQUIRED)
@@ -17,6 +19,7 @@ add_executable(
     src/EBO.cpp
     src/Texture.cpp
     src/Camera.cpp
+    src/Mesh.cpp
 
     src/glad.c
     src/stb.cpp
